@@ -73,7 +73,7 @@ public class Server extends Thread {
                 while (true) {
                     // ожидание подключения
                     Socket socket = serverSocket.accept();
-                    System.err.println("Client accepted");
+                    System.err.println("ClientN accepted");
                     // Стартуем обработку клиента
                     new Server().setSocket(i++, socket);
                 }
