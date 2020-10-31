@@ -2,6 +2,8 @@ import org.w3c.dom.ls.LSOutput;
 
 import java.net.*;
 import java.io.*;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Scanner;
 
 public class ClientN {
@@ -43,9 +45,11 @@ public class ClientN {
                 System.out.println();
                 while (true) {
                     line = keyboard.readLine();
-                    out.writeUTF(name + ": " + line);
+                    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm:ss");
+                    out.writeUTF(name +  " [" + simpleDateFormat.format(new Date())+ "]" + ": " +line);
                     out.flush();
                     line = in.readUTF();
+
                     if (line.endsWith("EndWork")) {
                         break;
                     }
